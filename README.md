@@ -4,7 +4,7 @@ An Object Oriented C++ wrapper for libcurl simplifying the process of making HTT
 
 ### Core functinality
 - [x] HTTP Request Object
-- [ ] HTTP Client
+- [x] HTTP Client
 - [ ] HTTP Response Object
 - [ ] HTTP Server
 

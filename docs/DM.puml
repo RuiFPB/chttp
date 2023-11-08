@@ -1,0 +1,54 @@
+@startuml
+
+hide empty members
+
+title CHTTP - Domain Model
+
+class HTTPClient {
+    - address
+    - port
+    + HTTPClient(address, port)
+    + HTTPClient(address)
+    + HTTPClient(void)
+    + HTTPResponse makeRequest(request)
+}
+
+class HTTPRequest {
+    - method
+    - path
+    - headers
+    - body
+    + HTTPRequest(method, path, headers, body)
+    + HTTPRequest(method, path, headers)
+    + HTTPRequest(method, path)
+    + HTTPRequest(method)
+    + HTTPRequest(void)
+    + HTTPRequest setMethod(method)
+    + HTTPRequest setPath(path)
+    + HTTPRequest setBody(body)
+    + HTTPRequest addHeader(key, value)
+}
+
+class HTTPResponse {
+    - statusCode
+    - statusPhrase
+    - headers
+    - body
+    + HTTPResponse(statusCode, headers, body)
+    + HTTPResponse(statusCode, headers)
+    + HTTPResponse(statusCode)
+    + HTTPResponse(void)
+    + HTTPResponse setStatusCode(statusCode)
+    + HTTPResponse setBody(body)
+    + HTTPResponse addHeader(key, value)
+}
+
+class HTTPMethod {
+    - method
+}
+
+HTTPClient -- HTTPRequest
+HTTPClient -- HTTPResponse
+HTTPRequest -- HTTPMethod
+
+@enduml
